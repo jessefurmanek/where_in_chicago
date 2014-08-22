@@ -1,16 +1,79 @@
-<script>
-var x = document.getElementById("demo");
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-</script>
-
 <head>
+	 <link rel="stylesheet" type="text/css" href="where_in_chicago.css">
+	 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> <!-- adding google maps api -->
+	<script> 
+	
+	var map; 	  //create map object
+	var colorValues = [	
+					"red", 
+					"blue",
+					"green", 
+					"brown", 
+					"purple", 
+					"pink"
+				]
+
+	function initialize() {
+	  var mapOptions = {
+	    zoom: 12
+	  };
+	  
+
+	  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+	  // Try HTML5 geolocation
+	  if(navigator.geolocation) {
+	    
+		 navigator.geolocation.getCurrentPosition(
+			 function(position) {
+	      	   var pos = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+			   var infowindow = new google.maps.InfoWindow({
+	        	   map: map,
+	      		   position: pos,
+	      	       content: 'Display Neighborhood'
+	      });
+		  	map.setCenter(pos);
+		    map.data.loadGeoJson('http://127.0.0.1:8000/neighborhoods.json')
+			map.data.setStyle(function(feature) {
+			    return {
+			      fillColor: 'blue',
+			      strokeWeight: .5
+			    };
+			});
+			
+	    }, function() {
+	      handleNoGeolocation(true); //runs if there is an error in finding the location
+	    });
+	  } else {
+	    // Browser doesn't support Geolocation
+	    handleNoGeolocation(false);
+	  }
+	}
+
+	function handleNoGeolocation(errorFlag) {
+	  if (errorFlag) {
+	    var content = 'Error: The Geolocation service failed.';
+	  } else {
+	    var content = 'Error: Your browser doesn\'t support geolocation.';
+	  }
+
+	  var options = {
+	    map: map,
+	    position: new google.maps.LatLng(41.878020, -87.630071), //default map
+	    content: content //infowindow gives an errorcode
+	  };
+
+	  var infowindow = new google.maps.InfoWindow(options);
+	  map.setCenter(options.position);
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+	
+	</script>
 </head>
-<div id = "title">Chicago Neighborhood Finder</div>
+
 <body>
+<div id = "title">Chicago Neighborhood Finder</div>
+ <div id="map-canvas"></div>
+
 </body>
