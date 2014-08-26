@@ -51,7 +51,7 @@
 	 				var curNeighborhood = results[4].formatted_address;  //find the name of the current neighborhood (results[4] is the neighborhood level)
 	 				curNeighborhood = curNeighborhood.substring(0, curNeighborhood.indexOf(','));  //delete everything after the neighborhood
 	 		        
-		  		    map.data.loadGeoJson('neighborhoods.json')
+		  		    map.data.loadGeoJson('https://github.com/jessefurmanek/where_in_chicago/neighborhoods.json')
 		  			map.data.setStyle(function(feature) {
 		  				var varHood = feature.getProperty("PRI_NEIGH");
 		  				var color = varHood == curNeighborhood ? 'red':'blue';
