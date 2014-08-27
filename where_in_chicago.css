@@ -5,7 +5,17 @@ html, body{
 }
 #map-canvas{
     height: 50%;
-	width: 50%;
+	width: 100%;
     margin: 0px;
     padding: 0px
+}
+
+#hereMessage, #title{
+	font-family: Sans-Serif;
+	font-style: bold;
+	font-size:64px;
+}
+
+#hereMessage{
+	text-align:right;
 }
