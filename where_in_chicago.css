@@ -6,10 +6,13 @@ html, body{
 #map-canvas{
     height: 50%;
 	width: 100%;
-    margin: 0px;
+    margin: left;
     padding: 0px
 }
 
+#map-container{
+ 
+}
 #hereMessage, #title{
 	font-family: Sans-Serif;
 	font-style: bold;
@@ -18,4 +21,5 @@ html, body{
 
 #hereMessage{
 	text-align:right;
+	margin-right: 5%;
 }

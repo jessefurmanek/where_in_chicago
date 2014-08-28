@@ -67,7 +67,7 @@
 					if(curNeighborhood == "Loop"){
 						messageToUser.innerHTML = "You're in the " + curNeighborhood + ".";
 					}else{
-						messageToUser.innerHTML = "You're in " + curNeighborhood;
+						messageToUser.innerHTML = "You're in " + curNeighborhood+ ".";
 					}
 	 		      } else {
 	 		        alert('No results found');
@@ -123,7 +123,9 @@
 
 <body>
 <div id = "title">Chicago Neighborhood Finder</div>
- <div id="map-canvas"></div>
+<div id = "map-container">
+	<div id="map-canvas"></div>
+</div>
  <div id="panel">
 	 <p id = "hereMessage"></p>
    </div>
