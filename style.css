@@ -8,21 +8,21 @@
 #title{
     font-size: 2.7em;
     text-align:left;
-    font-family: 'Futura','Open Sans', sans-serif;
+    font-family: 'Helvetica','Open Sans', sans-serif;
     font-weight: bold;
 }
 
 #locationSentence{
     font-size: 2.7em;
     text-align:right;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Helvetica', 'Open Sans', sans-serif;
     font-weight: bold;
 }
 
 .leaflet-popup-content{
     padding:1px !important;
     text-align:center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Helvetica','Open Sans', sans-serif;
 }
 .leaflet-popup-tip{
     /*remove tip at bottom*/
