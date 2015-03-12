@@ -9,10 +9,11 @@
     font-size: 2.7em;
     text-align:left;
     font-family: 'Helvetica','Open Sans', sans-serif;
+    padding-bottom:1%;
 }
 
 #locationSentence{
-    padding-top:5%;
+    padding-top:1%;
     font-size: 2.7em;
     text-align:right;
     font-family: 'Helvetica', 'Open Sans', sans-serif;
