@@ -40,7 +40,7 @@ var main = function initmap() {
         $.ajax({
             'async': false,
             'global': false,
-            'url': "https://raw.githubusercontent.com/jessefurmanek/where_in_chicago/gh-pages/neighborhoods.json",
+            'url': "neighborhoods.json",
             'dataType': "json",
             'success': function load(d) {
 				        json = L.geoJson(d, {
