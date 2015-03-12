@@ -55,7 +55,7 @@ var main = function initmap() {
 
 	var curLocationMarker = L.mapbox.featureLayer().addTo(map);
 
-	map.locate({setView: true, maxZoom: 14});
+	map.locate({setView: true, maxZoom: 12});
 
 	map.on('locationfound', function(e) {
     map.fitBounds(e.bounds);
@@ -128,7 +128,7 @@ function mouseExit(e) {
 	
 	closeTooltip = window.setTimeout(function() {
 	      map.closePopup();
-	  }, 100000);
+	  }, 100);
 
 	//only reset the color of the feature if it isn't currently highlighted
 	if(typeof layer.defaultOptions === "undefined"){
