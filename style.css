@@ -1,0 +1,29 @@
+#map { 
+    height: 70%;
+		width: 100%;
+    margin: left;
+    padding: 0px 
+  }
+
+#title{
+    font-size: 2.5em;
+    text-align:left;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#locationSentence{
+    font-size: 2.3em;
+    text-align:right;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.leaflet-popup-content{
+    padding:1px !important;
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;
+}
+.leaflet-popup-tip{
+    /*remove tip at bottom*/
+    border: 0px solid transparent !important;
+    padding:0px !important;
+}
