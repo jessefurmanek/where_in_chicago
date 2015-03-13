@@ -94,7 +94,7 @@ var main = function initmap() {
    		case "Magnificent Mile":
    			messageToUser.innerHTML = "You're at the " + curNeighborhoodString + ".";
    		default:
-   			messageToUser.innerHTML = "You're in" + curNeighborhoodString + ".";
+   			messageToUser.innerHTML = "You're in " + curNeighborhoodString + ".";
    	}
    	return curNeighborhoodString
 	});
