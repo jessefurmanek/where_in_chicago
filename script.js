@@ -73,18 +73,26 @@ var main = function initmap() {
         }
     })
 
-   	var curNeighLayer = leafletPip.pointInLayer([e.latlng.lng, e.latlng.lat], neighborhoodsJSON, true);
-   	
-   	//set current neighborhood
-   	var curNeighborhoodString = curNeighLayer[0].feature.properties["PRI_NEIGH"];
-   	
-   	styledCurNeighLayer = curNeighLayer[0].setStyle({
-			color: '#FF0000',
-			dashArray: 'none',
-   		weight: 4,
-   		fillColor: '#F5F5F5'});
 
-   	map.addLayer(styledCurNeighLayer);
+
+   	var curNeighLayer = "undefined";
+    var curNeighborhoodString = "a place that's not Chicago";
+   	
+    if(leafletPip.pointInLayer([e.latlng.lng, e.latlng.lat], neighborhoodsJSON, true).length !== 0){
+      curNeighLayer = leafletPip.pointInLayer([e.latlng.lng, e.latlng.lat], neighborhoodsJSON, true)
+      //set current neighborhood
+      curNeighborhoodString = curNeighLayer[0].feature.properties["PRI_NEIGH"];
+
+      styledCurNeighLayer = curNeighLayer[0].setStyle({
+      color: '#FF0000',
+      dashArray: 'none',
+      weight: 4,
+      fillColor: '#F5F5F5'});
+
+    map.addLayer(styledCurNeighLayer);
+    }
+   	
+
 
    	var messageToUser = document.getElementById("locationSentence");
    	switch(curNeighborhoodString){
