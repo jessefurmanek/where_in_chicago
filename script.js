@@ -76,7 +76,7 @@ var main = function initmap() {
 
 
    	var curNeighLayer = "undefined";
-    var curNeighborhoodString = "a place that's not Chicago";
+    var curNeighborhoodString = "a place that's not in Chicago";
    	
     if(leafletPip.pointInLayer([e.latlng.lng, e.latlng.lat], neighborhoodsJSON, true).length !== 0){
       curNeighLayer = leafletPip.pointInLayer([e.latlng.lng, e.latlng.lat], neighborhoodsJSON, true)
